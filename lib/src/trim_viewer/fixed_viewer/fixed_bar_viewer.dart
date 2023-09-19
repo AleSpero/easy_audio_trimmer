@@ -57,10 +57,10 @@ class FixedBarViewer extends StatelessWidget {
                 //     : widget.wavDeactiveColor;
                 i++;
                 return Container(
-                  color: barColor ?? Colors.black,
                   //rounded corners decoration
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                  decoration: BoxDecoration(
+                    color: barColor ?? Colors.black,
+                    borderRadius: const BorderRadius.all(Radius.circular(5.0)),
                   ),
                   height: height?.toDouble(),
                   width: 5.0,
