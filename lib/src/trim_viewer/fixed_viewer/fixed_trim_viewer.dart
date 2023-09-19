@@ -213,7 +213,7 @@ class _FixedTrimViewerState extends State<FixedTrimViewer>
       Duration? totalDuration = await audioPlayerController.getDuration();
 
       setState(() {
-        _barViewerW = _numberOfBars * _barViewerH;
+        _barViewerW = _numberOfBars * _barViewerH * 1.5;
 
         final FixedBarViewer barWidget = FixedBarViewer(
           audioFile: _audioFile!,
@@ -348,7 +348,7 @@ class _FixedTrimViewerState extends State<FixedTrimViewer>
       _allowDrag = true;
     } else {
       debugPrint("Dragging is outside of frame, ignoring gesture...NO LOL");
-      _allowDrag = true;
+      _allowDrag = false;
       return;
     }
 
