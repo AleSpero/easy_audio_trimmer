@@ -213,7 +213,7 @@ class _FixedTrimViewerState extends State<FixedTrimViewer>
       Duration? totalDuration = await audioPlayerController.getDuration();
 
       setState(() {
-        _barViewerW = _numberOfBars * _barViewerH * 1.5;
+        _barViewerW = _numberOfBars * _barViewerH;
 
         final FixedBarViewer barWidget = FixedBarViewer(
           audioFile: _audioFile!,
@@ -355,12 +355,12 @@ class _FixedTrimViewerState extends State<FixedTrimViewer>
     // Now we determine which part is dragged
     if (details.localPosition.dx <=
         _startPos.dx + widget.editorProperties.sideTapSize) {
-      _dragType = EditorDragType.left;
+      _dragType = EditorDragType.center;
     } else if (details.localPosition.dx <=
         _endPos.dx - widget.editorProperties.sideTapSize) {
       _dragType = EditorDragType.center;
     } else {
-      _dragType = EditorDragType.right;
+      _dragType = EditorDragType.center;
     }
   }
 
