@@ -348,7 +348,7 @@ class _FixedTrimViewerState extends State<FixedTrimViewer>
       _allowDrag = true;
     } else {
       debugPrint("Dragging is outside of frame, ignoring gesture...");
-      _allowDrag = true;
+      _allowDrag = false;
       return;
     }
 
