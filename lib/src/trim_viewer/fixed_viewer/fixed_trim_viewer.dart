@@ -355,12 +355,12 @@ class _FixedTrimViewerState extends State<FixedTrimViewer>
     // Now we determine which part is dragged
     if (details.localPosition.dx <=
         _startPos.dx + widget.editorProperties.sideTapSize) {
-      _dragType = EditorDragType.center;
+      _dragType = EditorDragType.left;
     } else if (details.localPosition.dx <=
         _endPos.dx - widget.editorProperties.sideTapSize) {
       _dragType = EditorDragType.center;
     } else {
-      _dragType = EditorDragType.center;
+      _dragType = EditorDragType.right;
     }
   }
 
