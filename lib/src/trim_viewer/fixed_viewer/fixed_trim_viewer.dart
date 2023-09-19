@@ -347,8 +347,8 @@ class _FixedTrimViewerState extends State<FixedTrimViewer>
         endDifference >= -widget.editorProperties.sideTapSize) {
       _allowDrag = true;
     } else {
-      debugPrint("Dragging is outside of frame, ignoring gesture...");
-      _allowDrag = false;
+      debugPrint("Dragging is outside of frame, ignoring gesture...NO LOL");
+      _allowDrag = true;
       return;
     }
 
