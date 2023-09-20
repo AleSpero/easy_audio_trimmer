@@ -360,9 +360,9 @@ class _FixedTrimViewerState extends State<FixedTrimViewer>
       _dragType = EditorDragType.left;
     } else if (details.localPosition.dx <=
         _endPos.dx - widget.editorProperties.sideTapSize) {
-      _dragType = EditorDragType.left;
+      _dragType = EditorDragType.center;
     } else {
-      _dragType = EditorDragType.left;
+      _dragType = EditorDragType.center;
     }
   }
 
