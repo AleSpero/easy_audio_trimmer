@@ -210,7 +210,7 @@ class _FixedTrimViewerState extends State<FixedTrimViewer>
       _numberOfBars = trimmerActualWidth ~/ _barViewerH;
       log('numberOfBars: $_numberOfBars');
       log('barViewerW: $_barViewerW');
-      Duration? totalDuration = await audioPlayerController.getDuration();
+      Duration? totalDuration = (await audioPlayerController.getDuration());
 
       setState(() {
         _barViewerW = _numberOfBars * _barViewerH;
@@ -230,11 +230,13 @@ class _FixedTrimViewerState extends State<FixedTrimViewer>
           return;
         }
 
+        totalDuration = Duration(milliseconds: totalDuration!.inMilliseconds ~/ 2);
+
         if (widget.maxAudioLength > const Duration(milliseconds: 0) &&
-            widget.maxAudioLength < totalDuration) {
-          if (widget.maxAudioLength < totalDuration) {
+            widget.maxAudioLength < totalDuration!) {
+          if (widget.maxAudioLength < totalDuration!) {
             fraction = widget.maxAudioLength.inMilliseconds /
-                totalDuration.inMilliseconds;
+                totalDuration!.inMilliseconds;
 
             maxLengthPixels = _barViewerW * fraction!;
           }
