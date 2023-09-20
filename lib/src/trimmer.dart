@@ -280,7 +280,7 @@ class Trimmer {
     required double startValue,
     required double endValue,
   }) async {
-    if (audioPlayer?.state == PlayerState.playing) {
+    if (false && audioPlayer?.state == PlayerState.playing) {
       await audioPlayer?.pause();
       return false;
     } else {
