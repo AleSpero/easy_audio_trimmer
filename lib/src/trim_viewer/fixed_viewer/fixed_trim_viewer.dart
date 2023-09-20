@@ -401,6 +401,8 @@ class _FixedTrimViewerState extends State<FixedTrimViewer>
         _onEndDragged();
       }
     }
+
+    _endPos = Offset(_endPos.dx + 40, _endPos.dy);
     setState(() {});
   }
 
@@ -498,7 +500,7 @@ class _FixedTrimViewerState extends State<FixedTrimViewer>
           CustomPaint(
             foregroundPainter: TrimEditorPainter(
               startPos: _startPos,
-              endPos: Offset(_endPos.dx + 50, _endPos.dy) ,
+              endPos: _endPos,
               scrubberAnimationDx: _scrubberAnimation?.value ?? 0,
               startCircleSize: _startCircleSize,
               endCircleSize: _endCircleSize,
