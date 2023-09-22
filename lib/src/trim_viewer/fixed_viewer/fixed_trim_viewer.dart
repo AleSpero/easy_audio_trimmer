@@ -457,6 +457,9 @@ class _FixedTrimViewerState extends State<FixedTrimViewer>
 
   @override
   Widget build(BuildContext context) {
+    debugPrint("endPos: $_endPos");
+    debugPrint("audioendpos: $_audioEndPos");
+    debugPrint("barviewerW: $_barViewerW");
     return GestureDetector(
       onHorizontalDragStart: _onDragStart,
       onHorizontalDragUpdate: _onDragUpdate,
